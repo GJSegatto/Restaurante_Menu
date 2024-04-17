@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+
+}
+
+.box {
+    background-color: brown;
+    height: 100px;
+    width: 300px;
+}
+.box.two {
+    background-color: aqua;
+    height: 100px;
+    width: 300px;
+}
+.box.three {
+    background-color: aliceblue;
+}
+.box.four {
+    background-color: antiquewhite;
+}
+.box.five {
+    background-color: aquamarine;
+}
+[v-cloak] {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
