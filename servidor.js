@@ -104,7 +104,7 @@ app.use((req, res) => {
     res.status(404).send('Rota não encontrada.');
 });
 
-app.listen(4001, async () => {
+app.listen(4000, async () => {
     console.log("Servidor rodando na porta 4000");
     await conecta();
 })

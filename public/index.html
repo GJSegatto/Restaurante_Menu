@@ -10,114 +10,24 @@
     <link rel="stylesheet" href="style.css" class="css">
 </head>
 <body>
-    <div id="app" v-cloak>
-        <h1>{{ title }}</h1>
-        <div>
-            <button @click="menu_entrada">Entradas</button>
+    <main>
+        <div id="coluna">
+            <button onclick="app.menu_principal()" class="btn">Principais</button>
+            <button onclick="app.menu_entrada()" class="btn">Entradas</button>
+            <button onclick="app.menu_porcao()" class="btn">Porções</button>
+            <button onclick="app.menu_sobremesa()" class="btn">Sobremesas</button>
+            <button onclick="app.menu_bebida()" class="btn">Bebidas</button>
         </div>
-        <div>
-            <button @click="menu_principal">Principal</button>
-        </div>
-        <div>
-            <button @click="menu_porcao">Porções</button>
-        </div>
-        <div>
-            <button @click="menu_bebida">Bebidas</button>
-        </div>
-        <div>
-            <button @click="menu_sobremesa">Sobremesas</button>
-        </div>
+        
+        <header id="titulo">Restaurante Seg San</header>
+        <div id="app"></div>
+        
+    </main>
 
-
-
-        <div v-if="menu_entrada" class="box">
-            <ul>
-                <li v-for="item in entradas">{{ item }}</li>
-            </ul>
-        </div>
-        <div v-if="menu_principal" class="box two">
-            <ul>
-                <li v-for="item in principais">{{ item }}</li>
-            </ul>
-        </div>    
-        <div v-if="menu_porcao" class="box three">
-            <ul>
-                <li v-for="item in porcoes">{{ item }}</li>
-            </ul>
-        </div>   
-        <div v-if="menu_bebida" class="box four">
-            <ul>
-                <li v-for="item in bebidas">{{ item }}</li>
-            </ul>
-        </div>   
-        <div v-if="menu_sobremesa" class="box five">
-            <ul>
-                <li v-for="item in sobremesas">{{ item }}</li>
-            </ul>
-        </div>   
-    </div>
-
-    <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    title: 'Cardápio dos Guri',
-                    principais: ' ',
-                    entradas: ' ',
-                    porcoes: ' ',
-                    bebidas: ' ',
-                    sobremesas: ' '
-                }
-            }, 
-
-            methods: {
-                menu_entrada() {
-                    axios.get('http://localhost:4001/entradas')
-                    .then(resp => {
-                        this.entradas = resp.data;
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
-                },
-                menu_principal() {
-                    axios.get('http://localhost:4001/principais')
-                    .then(resp => {
-                        this.principais = resp.data;
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
-                },
-                menu_porcao() {
-                    axios.get('http://localhost:4001/porcoes')
-                    .then(resp => {
-                        this.porcoes = resp.data;
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
-                },
-                menu_bebida() {
-                    axios.get('http://localhost:4001/bebidas')
-                    .then(resp => {
-                        this.bebidas = resp.data;
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
-                },
-                menu_sobremesa() {
-                    axios.get('http://localhost:4001/sobremesas')
-                    .then(resp => {
-                        this.sobremesas = resp.data;
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
-                }
-            }
-        }).mount('#app');
-    </script>
+    <!--
+    <div id="app"></div>
+    -->
+    
+    <script src="app.js"></script>
 </body>
 </html>
