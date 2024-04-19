@@ -1,45 +1,107 @@
 const app = Vue.createApp({
     data() {
         return {
-            title: 'Cardápio dos Guri',
-            principais: ' ',
-            entradas: ' ',
-            porcoes: ' ',
-            bebidas: ' ',
-            sobremesas: ' '
+            data: '',
         }
     }, 
 
     template: `
-    <div id="app" v-cloak>
-        <h1>{{ title }}</h1>
-        
-        <div v-if="menu_entrada" class="box">
-            <ul>
-                <li v-for="item in entradas">{{ item }}</li>
-            </ul>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
         </div>
-        <div v-if="menu_principal" class="box two">
-            <ul>
-                <li v-for="item in principais">{{ item }}</li>
-            </ul>
-        </div>    
-        <div v-if="menu_porcao" class="box three">
-            <ul>
-                <li v-for="item in porcoes">{{ item }}</li>
-            </ul>
-        </div>   
-        <div v-if="menu_bebida" class="box four">
-            <ul>
-                <li v-for="item in bebidas">{{ item }}</li>
-            </ul>
-        </div>   
-        <div v-if="menu_sobremesa" class="box five">
-            <ul>
-                <li v-for="item in sobremesas">{{ item }}</li>
-            </ul>
-        </div>   
-    </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
+        <div class="book">
+            <p>Hello</p>
+            <div class="cover">
+                <p>Hover Me</p>
+            </div>
+        </div>
     `,
 
     methods: {
@@ -74,10 +136,12 @@ const app = Vue.createApp({
             axios.get('http://localhost:4000/bebidas')
             .then(resp => {
                 this.bebidas = resp.data;
+                console.log(this.bebidas[0].imagem);
             })
             .catch(error => {
                 console.log(error);
             });
+            
         },
         menu_sobremesa() {
             axios.get('http://localhost:4000/sobremesas')
@@ -89,4 +153,4 @@ const app = Vue.createApp({
             });
         }
     }
-}).mount('#app');
+}).mount('#app'); 

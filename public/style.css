@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -6,13 +9,9 @@ main {
     display: grid;
     grid-template: 
             "a a" 1fr
-            "b c" 4fr / 20vw 1fr;
-    gap: 15px;
-}
-
-main > #app {
-    border-bottom: 5px solid #ffc506;
-    border-right: 5px solid #ffc506;
+            "b c" 5fr / 20vw 1fr;
+    gap: 10px;
+    height: 98vh;
 }
 
 body {
@@ -20,69 +19,127 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
+}
+button.special {
+    background-color: #ffc506;
 }
 
-.btn {
-    font-size: 30px;
-    background: transparent;
-    border: none;
-    padding: 1em 1.5em;
-    color: #ffedd3;
-    text-transform: uppercase;
-    position: relative;
-    transition: 0.5s ease;
-    cursor: pointer;
-    height: 15vh;
-  }
-  
-  .btn::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0;
-    background-color: #ffc506;
-    transition: 0.5s ease;
-  }
-  
-  .btn:hover {
-    color: #1e1e2b;
-    transition-delay: 0.5s;
-  }
-  
-  .btn:hover::before {
-    width: 100%;
-  }
-  
-  .btn::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    background-color: #ffc506;
-    transition: 0.4s ease;
-    z-index: -1;
-  }
-  
-  .btn:hover::after {
-    height: 100%;
-    transition-delay: 0.4s;
-    color: aliceblue;
-  }
+button.special::before,
+button.special:hover::before {
+    transition: none;
+}
 
-#conteudo {
-    background-color: rgba(56, 34, 9, 0.95);
-    grid-area: c;
+button {
+    font-family: "Italiana", sans-serif;
+    font-size: 40px;
+    height: 12vh;
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #573509;
+    position: relative;
+    font-weight: 1000;
+    overflow: hidden;
+    transition: all 250ms;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #ffc506;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+}
+
+button:hover {
+    color: #e8e8e8;
+    cursor: pointer;
+}
+
+button:hover::before {
+    width: 100%;
+    transition: all 250ms
+}
+
+.book {
+    position: relative;
+    border-radius: 10px;
+    width: 26rem;
+    height: 36rem;
+    margin-bottom: 3rem;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+}
+
+.cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+}
+
+p {
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 #coluna {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    gap: 10px;
     justify-content: space-evenly;
     grid-area: b;
     background-color: rgba(56, 34, 9, 0.95);
@@ -95,7 +152,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 8vh;
+    font-size: 65px;
     color: #ffc506;
     background-color: rgba(56, 34, 9, 0.95);
     border-top: 5px solid #ffc506;
@@ -105,12 +162,17 @@ body {
 
 #app {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 5rem;
+    justify-content: space-evenly;
     align-items: center;
     grid-area: c;
     background-color: rgba(56, 34, 9, 0.85);
-    overflow: scroll;
+    overflow: auto;
+    border-bottom: 5px solid #ffc506;
+    border-right: 5px solid #ffc506;
 }
 
 
