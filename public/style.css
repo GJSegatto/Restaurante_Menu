@@ -20,6 +20,19 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+ul {
+    font-size: 25px;
+    margin: 10px;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+ul li {
+    line-height: 0.8;
+}
+
 button.special {
     background-color: #ffc506;
 }
@@ -72,6 +85,7 @@ button:hover::before {
 
 .book {
     position: relative;
+    font-family: "Sacramento", sans-serif;
     border-radius: 10px;
     width: 26rem;
     height: 36rem;
@@ -89,7 +103,6 @@ button:hover::before {
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -111,15 +124,21 @@ button:hover::before {
     transform-origin: 0;
     -webkit-box-shadow: 1px 1px 12px #000;
     box-shadow: 1px 1px 12px #000;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cover > img {
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
 }
 
 .book:hover .cover {
@@ -130,10 +149,50 @@ button:hover::before {
     transform: rotatey(-80deg);
 }
 
-p {
-    font-size: 20px;
+.cover > p {
+    font-size: 35px;
     font-weight: bolder;
+    text-align: center;
 }
+
+.content {
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    font-family: "Sacramento", sans-serif;
+    padding: 5% 5% 5% 10%;
+    text-align: center;
+
+}
+
+.content > div {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5%;
+}
+
+.descricao {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+.ingredients {
+    margin: 0;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.valor {
+    font-size: 25px;
+    text-align: end;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    border-bottom: 2px solid #000;
+}
+
 
 #coluna {
     display: flex;
@@ -148,6 +207,7 @@ p {
 }
 
 #titulo {
+    font-family: "Italiana", sans-serif;
     grid-area: a;
     display: flex;
     justify-content: center;
@@ -176,31 +236,6 @@ p {
 }
 
 
-
-.box {
-    background-color: rgb(77, 41, 0);
-    height: 100px;
-    width: 300px;
-}
-.box.two {
-    background-color: rgb(56, 34, 9);
-    height: 100px;
-    width: 300px;
-}
-.box.three {
-    background-color: rgb(44, 11, 11);
-}
-.box.four {
-    background-color: rgb(255, 238, 0);
-}
-.box.five {
-    background-color: rgb(26, 16, 2);
-}
 [v-cloak] {
     display: none;
-}
-
-ul {
-    list-style: none;
-    text-decoration: none;
 }
