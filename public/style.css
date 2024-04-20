@@ -8,14 +8,14 @@
 main {
     display: grid;
     grid-template: 
-            "a a" 1fr
-            "b c" 5fr / 20vw 1fr;
+            "a b b" 1fr
+            "c d d" 5fr / 20vw 1fr;
     gap: 10px;
     height: 98vh;
 }
 
 body {
-    background-image: url("./img/rest_back.jpg");
+    background-image: url("./img/back_teste.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -33,32 +33,32 @@ ul li {
     line-height: 0.8;
 }
 
-button.special {
-    background-color: #ffc506;
+.btn.special {
+    background-color: #BDB76B;
 }
 
-button.special::before,
-button.special:hover::before {
+.btn.special::before,
+.btn.special:hover::before {
     transition: none;
 }
 
-button {
+.btn {
     font-family: "Italiana", sans-serif;
     font-size: 40px;
     height: 12vh;
     padding: 15px 25px;
     border: unset;
     border-radius: 15px;
-    color: #212121;
+    color: #805f41;
     z-index: 1;
-    background: #573509;
+    background: #362917;
     position: relative;
     font-weight: 1000;
     overflow: hidden;
     transition: all 250ms;
 }
 
-button::before {
+.btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -66,19 +66,18 @@ button::before {
     height: 100%;
     width: 0;
     border-radius: 15px;
-    background-color: #ffc506;
+    background-color: #BDB76B;
     z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms;
 }
 
-button:hover {
-    color: #e8e8e8;
+.btn:hover {
+    color: #967250;
     cursor: pointer;
 }
 
-button:hover::before {
+.btn:hover::before {
     width: 100%;
     transition: all 250ms
 }
@@ -90,21 +89,13 @@ button:hover::before {
     width: 26rem;
     height: 36rem;
     margin-bottom: 3rem;
-    background-color: whitesmoke;
-    -webkit-box-shadow: 1px 1px 12px #000;
+    background-color: #F8F8FF;
     box-shadow: 1px 1px 12px #000;
-    -webkit-transform: preserve-3d;
-    -ms-transform: preserve-3d;
     transform: preserve-3d;
-    -webkit-perspective: 2000px;
     perspective: 2000px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     color: #000;
 }
@@ -112,18 +103,13 @@ button:hover::before {
 .cover {
     top: 0;
     position: absolute;
-    background-color: lightgray;
+    background-color: #362917;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 7px;
     cursor: pointer;
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    -webkit-transform-origin: 0;
-    -ms-transform-origin: 0;
     transform-origin: 0;
-    -webkit-box-shadow: 1px 1px 12px #000;
-    box-shadow: 1px 1px 12px #000;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -135,17 +121,14 @@ button:hover::before {
     height: 50%;
     padding: 5px;
     border-radius: 20px;
-    border: 1px solid #000;
+    border: 1px solid #805f41;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .book:hover .cover {
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    -webkit-transform: rotatey(-80deg);
-    -ms-transform: rotatey(-80deg);
     transform: rotatey(-80deg);
 }
 
@@ -153,6 +136,7 @@ button:hover::before {
     font-size: 35px;
     font-weight: bolder;
     text-align: center;
+    color: #805f41;
 }
 
 .content {
@@ -190,9 +174,13 @@ button:hover::before {
     position: absolute;
     bottom: 0;
     right: 20px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #000000;
 }
 
+#logo {
+    grid-area: a;
+    border-radius: 5px;
+}
 
 #coluna {
     display: flex;
@@ -200,42 +188,110 @@ button:hover::before {
     padding: 10px;
     gap: 10px;
     justify-content: space-evenly;
-    grid-area: b;
-    background-color: rgba(56, 34, 9, 0.95);
-    border-left: 5px solid #ffc506;
-    border-bottom: 5px solid #ffc506;
+    grid-area: c;
+    background-color: rgba(32, 17, 0, 0.95);
+    border-left: 4px solid #805f41;
+    border-bottom: 4px solid #805f41;
+    border-right: 0px;
+    border-top: 0px;
+    border-style: dashed;
+    border-radius: 5px;
 }
 
 #titulo {
     font-family: "Italiana", sans-serif;
-    grid-area: a;
+    grid-area: b;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 65px;
-    color: #ffc506;
-    background-color: rgba(56, 34, 9, 0.95);
-    border-top: 5px solid #ffc506;
-    border-left: 5px solid #ffc506;
-    border-right: 5px solid #ffc506;
+    color: #BDB76B;
+    background-color: rgba(32, 17, 0, 0.95);
+    border-top: 4px solid #805f41;
+    border-right: 4px solid #805f41;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-style: dashed;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 #app {
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
     padding: 5rem;
     justify-content: space-evenly;
     align-items: center;
-    grid-area: c;
-    background-color: rgba(56, 34, 9, 0.85);
+    grid-area: d;
+    background-color: rgba(32, 17, 0, 0.85);
     overflow: auto;
-    border-bottom: 5px solid #ffc506;
-    border-right: 5px solid #ffc506;
+    border-bottom: 4px solid #805f41;
+    border-right: 4px solid #805f41;
+    border-left: 0px;
+    border-top: 0px;
+    border-style: dashed;
+    border-radius: 5px;
 }
 
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    overflow: auto;
+    grid-area: d;
+    background-color: #362917;
+    font-family: "Sacramento", sans-serif;
+    font-size: 30px;
+    color: #805f41;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    text-align: center;
+    border-bottom: 4px #805f41;
+    border-right: 4px #805f41;
+    border-top: 0px;
+    border-left: 0px;
+    border-style: dashed;
+    border-radius: 5px;
+}
 
-[v-cloak] {
-    display: none;
+#home > h1 {
+    text-decoration: underline;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+#home > h2,
+#home > p {
+    margin: 5px;
+}
+
+#home > p > span {
+    text-decoration: line-through;
+}
+
+#home > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 55px;
+}
+
+#home > div > img {
+    height: 100%;
+    width: 50%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid #805f41;
+}
+
+#logo {
+    background-color: rgba(32, 17, 0, 0.95);
+    border-top: 4px #805f41;
+    border-left: 4px #805f41;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-style: dashed;
 }

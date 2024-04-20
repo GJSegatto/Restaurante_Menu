@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio dos Guri</title>
+    <title>Restaurante SegSan - Cardápio</title>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" href="./img/favicon.ico">
@@ -11,20 +11,31 @@
 </head>
 <body>
     <main>
+        <div id="logo">logo</div>
         <div id="coluna">
-            <button onclick="app.menu_principal()" class="btn">Principais</button>
-            <button onclick="app.menu_entrada()" class="btn">Entradas</button>
-            <button onclick="app.menu_porcao()" class="btn">Porções</button>
-            <button onclick="app.menu_sobremesa()" class="btn">Sobremesas</button>
-            <button onclick="app.menu_bebida()" class="btn">Bebidas</button>
+            <button onclick="app.menu_principal(); showApp();" class="btn">Principais</button>
+            <button onclick="app.menu_entrada(); showApp();" class="btn">Entradas</button>
+            <button onclick="app.menu_porcao(); showApp();" class="btn">Porções</button>
+            <button onclick="app.menu_sobremesa(); showApp();" class="btn">Sobremesas</button>
+            <button onclick="app.menu_bebida(); showApp();" class="btn">Bebidas</button>
         </div>
         
-        <header id="titulo">Restaurante Seg San</header>
-        <div id="app"></div>
-        
+        <header id="titulo">Restaurante SegSan</header>
+        <div id="home">
+            <h1>Seja Bem Vindo</h1>
+            <p>Escolha uma opção no menu ao lado para ver o cardápio</p>
+            <h2>Sugestão do chef:</h2>
+            <div>
+                <img src="./img/Caldo_Mandioca_CarneSeca.jpg" alt="">
+                <img src="./img/Risoto_Funghi.jpg" alt="">
+                <img src="./img/Petit_Gateau.jpg" alt="">
+            </div>
+            <p>Uma combinação de um delicioso caldo de mandioca com carne seca que abre o paladar. Em seguida um prato cheio do mais saboroso risoto de funghi. E para fechar com chave de ouro, o petit gateau do chef avaliado e aprovado pelo próprio criador do prato, o Chef. Erick Jacquin!</p>
+            <p>Essa combinação gratifica o consumidor com um desconto! De <span>R$85</span> Por apenas R$80</p>
+        </div>
+        <div id="app"></div>   
     </main>
     <script src="app.js"></script>
     <script src="utils.js"></script>
-
 </body>
 </html>
