@@ -100,6 +100,21 @@ app.get('/sobremesas', async (req, res) => {
     }
 });
 
+app.get('/:categoria/:nome', async (req, res) => {
+    try {
+        var categoria = req.params.categoria;
+        var nome = req.params.nome;
+        var collection = db.collection(categoria);
+        const item = await collection.findOne({ nome: nome });
+        const { _id, imagem, ...rest} = item; 
+        console.log(rest)
+        res.send(rest);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Erro ao buscar item.');
+    }
+})
+
 app.use((req, res) => {
     res.status(404).send('Rota não encontrada.');
 });
